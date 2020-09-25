@@ -1,0 +1,22 @@
+# frozen_string_literal: true
+
+source 'https://rubygems.org'
+
+gem 'sinatra'
+gem 'sinatra-contrib'
+gem 'haml'
+
+group :test do
+  gem 'rack-test'
+  gem 'rspec'
+  gem 'rspec-given'
+  gem 'timecop'
+  gem 'webmock'
+end
+
+group :development, :test do
+  gem 'pry', require: false
+  gem 'pry-nav'
+  gem 'rubocop', '~> 0.73.0', require: false
+  gem 'yard'
+end

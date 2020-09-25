@@ -1,0 +1,14 @@
+version: '3.2'
+services:
+  template:
+    command: "bundle exec rackup --host 0.0.0.0 -p 9091"
+    build: .
+    working_dir: /opt/app/src
+    volumes:
+      - .:/opt/app
+    ports:
+      - "${APP_REPORTS:-9091}:9091"
+    env_file:
+      - .env
+    tmpfs:
+      - /opt/app/tmp
